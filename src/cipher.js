@@ -73,7 +73,4 @@ window.cipher = {
     }
    return (stringDecipher);
   },
- 
-    
-  }
 };
