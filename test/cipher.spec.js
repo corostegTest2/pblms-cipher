@@ -13,22 +13,6 @@ describe('cipher', () => {
 
   });
 
-  describe('cipher.encode', () => {
-
-    it('debería ser una función', () => {
-      expect(typeof cipher.encode).toBe('function')
-    });
-
-      it('debería retornar "HIJKLMNOPQRSTUVWXYZABCDEFG" para "ABCDEFGHIJKLMNOPQRSTUVWXYZ" con offset 33',() =>{
-        expect(cipher.encode(33,"ABCDEFGHIJKLMNOPQRSTUVWXYZ")).toBe("HIJKLMNOPQRSTUVWXYZABCDEFG");
-     });
-     
-     it('debería retornar "lqltwsv #4" para "ejemplo #1" con offset 33',() =>{
-      expect(cipher.encode(33,"ejemplo #1")).toBe("lqltwsv #4"); 
-     });
-    
-  });
-
   describe('cipher.decode', () => {
 
     it('debería ser una función', () => {
