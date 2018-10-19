@@ -1,34 +1,41 @@
-global.window = global;
-require('../src/cipher');
-require('./cipher.spec.js');
-const expect = require('expect')
+gdescribe('cipher', () => {
 
-describe('cipher', () => {
+  it('debería ser un objeto', () => {
+    assert.equal(typeof cipher, 'object');
+  });
 
-  describe('cipher.object', () => {
+  describe('cipher.encode', () => {
 
-    it('debería ser un objeto', () => {
-      expect(typeof cipher).toBe('object');
+    it('debería ser una función', () => {
+      assert.equal(typeof cipher.encode, 'function');
     });
 
+      it('debería retornar "HIJKLMNOPQRSTUVWXYZABCDEFG" para "ABCDEFGHIJKLMNOPQRSTUVWXYZ" con offset 33',() =>{
+        assert.equal(cipher.encode(33,"ABCDEFGHIJKLMNOPQRSTUVWXYZ"),"HIJKLMNOPQRSTUVWXYZABCDEFG" );
+     });
+     
+     it('debería retornar "lqltwsv #4" para "ejemplo #1" con offset 33',() =>{
+      assert.equal(cipher.encode(33,"ejemplo #1"),"lqltwsv #4"); 
+     });
+    
   });
 
   describe('cipher.decode', () => {
 
     it('debería ser una función', () => {
-      expect(typeof cipher.decode).toBe('function');
+      assert.equal(typeof cipher.decode, 'function');
     });
 
     it('debería retornar "ABCDEFGHIJKLMNOPQRSTUVWXYZ" para "HIJKLMNOPQRSTUVWXYZABCDEFG" con offset 33',() =>{
-      expect(cipher.decode(33,"HIJKLMNOPQRSTUVWXYZABCDEFG")).toBe("ABCDEFGHIJKLMNOPQRSTUVWXYZ");
+        assert.equal(cipher.decode(33,"HIJKLMNOPQRSTUVWXYZABCDEFG"),"ABCDEFGHIJKLMNOPQRSTUVWXYZ" );
      });
      it('debería retornar "ejemplo #1" para "lqltwsv #4" con offset 33',() =>{
-      expect(cipher.decode(33,"lqltwsv #4")).toBe("ejemplo #1"); 
+      assert.equal(cipher.decode(33,"lqltwsv #4"),"ejemplo #1"); 
      }); 
+    
+     
 
-  });
-
-    describe('cipher.createCipherWithOffset', () => {
+  describe('cipher.createCipherWithOffset', () => {
 
     it('debería ser una función', () => {
       assert.equal(typeof cipher.createCipherWithOffset, 'function');
@@ -48,5 +55,5 @@ describe('cipher', () => {
 
   });
 });
-  
+
 });
