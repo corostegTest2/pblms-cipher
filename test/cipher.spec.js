@@ -1,3 +1,8 @@
+global.window = global;
+require('../src/cipher');
+require('./cipher.spec.js');
+const expect = require('expect')
+
 describe('cipher', () => {
 
   it('debería ser un objeto', () => {
