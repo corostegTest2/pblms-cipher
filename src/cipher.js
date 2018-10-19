@@ -13,7 +13,7 @@ window.cipher = {
       //mayusculas
       //Si el código ASCII es mayor igual que 65 y menor igual que 90 será cifrada con una mayúscula. 
       if (ASCIICodeOfTheLetter >= 65 && ASCIICodeOfTheLetter <= 90) {
-         codeFormula = ((ASCIICodeOfTheLetter - 65 + offset)% 26) + 62;
+         codeFormula = ((ASCIICodeOfTheLetter - 65 + offset)% 26) + 65;
          convertingTotheAlphabet = String.fromCharCode(codeFormula);
          stringCipher = stringCipher + convertingTotheAlphabet;
          // minusculas 
