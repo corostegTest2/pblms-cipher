@@ -72,6 +72,6 @@ window.cipher = {
       }
     }
    return (stringDecipher);
-  },
+  }
   
 };
