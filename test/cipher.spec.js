@@ -1,5 +1,5 @@
 global.window = global;
-require('../../src/cipher');
+require('../src/cipher');
 require('./cipher.spec.js');
 const expect = require('expect')
 
