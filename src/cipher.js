@@ -72,12 +72,5 @@ window.cipher = {
       }
     }
    return (stringDecipher);
-  },
-  createCipherWithOffset (offset){
-    return {
-      encode  (string){return cipher.encode(offset, string)},
-      decode (string){return cipher.decode(offset, string)}
-    };
-    
   }
 };
